@@ -1,0 +1,159 @@
+$bg-primary: #03faee;
+$bg-secondary: #f8f8f8;
+$color-primary: #8b8b8b;
+$shadow: #92f7f2;
+
+*{
+    box-sizing:border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.flex-content{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+}
+@mixin radius-color($width, $height){
+    position: absolute;
+    width: $width;
+    height: $height;
+    background-color: $bg-primary;
+    z-index: -1;
+    border-radius: 50%;
+}
+@mixin radius-item($width, $height){
+    border-radius: 50%;
+    border: 1px solid black;
+    width: $width;
+    height: $height;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4px;
+    background-color: $bg-secondary;
+    z-index: 2;
+}
+
+@mixin color-title($width, $height, $top, $index){
+    position: absolute;
+    height: $height;
+    width: $width;
+    top: $top;
+    background-color: $bg-primary;
+    z-index: $index;
+}
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    header{
+        padding: 20px 0 40px 0;
+        @extend .flex-content;
+        nav{
+            ul{
+                list-style: none;
+                display: flex;
+                gap: 15px;
+            }
+        }
+    }
+    main{
+        h2{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 55px;
+            line-height: 70px;
+            letter-spacing: 10px;
+            max-width: 300px;
+            padding: 20px 0;
+        }
+        h5{
+            font-weight: 700;
+        }
+        section{
+            @extend .flex-content;
+            align-items:flex-start;
+            padding: 0 217px;
+            &.cards{
+                gap: 40px;
+                flex-basis: 1 1 1;
+            }
+            .title{
+                @include color-title(52%,30px,30px ,-1);
+            }
+            img{
+                width: 100%;
+                max-width: 500px;
+            }
+            article:first-child{
+                position: relative;
+                p{
+                    max-width: 500px;
+                }
+            }
+            article.card{
+                background-color: $bg-secondary;
+                padding: 20px;
+                min-height: 300px;
+                flex-basis: 300px;
+                border-radius: 3px;
+                div{
+                    margin-bottom: 50px;
+                    z-index: 2;
+                    position: relative;
+                    .title-card{
+                        @include color-title(8%,8px,0px ,-1)
+                    }
+                    h4{
+                        z-index: 2;
+                    }
+                    .number{
+                        @include radius-item(35px, 35px);
+                        position: absolute;
+                        +span{
+                            @include radius-color(35px, 35px);
+                        }
+                    }
+                }
+            }
+            button{
+                padding: 15px 25px;
+                border: 1px solid $color-primary;
+                background-color: $bg-primary;
+                margin-right: 25px;
+                margin-top: 20px;
+                border-radius: 6px;
+            }
+        }
+    }
+    footer{
+        display: flex;
+        padding: 100px 0;
+        justify-content:space-around;
+        align-items: center;
+        section{
+            display: flex;
+            flex-basis: 200px;
+            justify-content: end;
+            gap: 30px;
+            position: relative;
+            article{
+                display: flex;
+                justify-content: center;
+                height: 35px;
+                width: 35px;
+                align-items: center;
+                div{
+                    @include radius-item(20px, 20px);
+                    padding: 20px;
+                    position: absolute;
+                    img{
+                        width: 15px;
+                        height: 15px;
+                    }
+                    +span{
+                        @include radius-color(45px, 42px);
+                    }
+                }
+            }
+        }
+    }
+}

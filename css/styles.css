@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.flex-content, body main section, body header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+body header {
+  padding: 20px 0 40px 0;
+}
+body header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+body main h2 {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 55px;
+  line-height: 70px;
+  letter-spacing: 10px;
+  max-width: 300px;
+  padding: 20px 0;
+}
+body main h5 {
+  font-weight: 700;
+}
+body main section {
+  align-items: flex-start;
+  padding: 0 217px;
+}
+body main section.cards {
+  gap: 40px;
+  flex-basis: 1 1 1;
+}
+body main section .title {
+  position: absolute;
+  height: 30px;
+  width: 52%;
+  top: 30px;
+  background-color: #03faee;
+  z-index: -1;
+}
+body main section img {
+  width: 100%;
+  max-width: 500px;
+}
+body main section article:first-child {
+  position: relative;
+}
+body main section article:first-child p {
+  max-width: 500px;
+}
+body main section article.card {
+  background-color: #f8f8f8;
+  padding: 20px;
+  min-height: 300px;
+  flex-basis: 300px;
+  border-radius: 3px;
+}
+body main section article.card div {
+  margin-bottom: 50px;
+  z-index: 2;
+  position: relative;
+}
+body main section article.card div .title-card {
+  position: absolute;
+  height: 8px;
+  width: 8%;
+  top: 0px;
+  background-color: #03faee;
+  z-index: -1;
+}
+body main section article.card div h4 {
+  z-index: 2;
+}
+body main section article.card div .number {
+  border-radius: 50%;
+  border: 1px solid black;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 4px;
+  background-color: #f8f8f8;
+  z-index: 2;
+  position: absolute;
+}
+body main section article.card div .number + span {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  background-color: #03faee;
+  z-index: -1;
+  border-radius: 50%;
+}
+body main section button {
+  padding: 15px 25px;
+  border: 1px solid #8b8b8b;
+  background-color: #03faee;
+  margin-right: 25px;
+  margin-top: 20px;
+  border-radius: 6px;
+}
+body footer {
+  display: flex;
+  padding: 100px 0;
+  justify-content: space-around;
+  align-items: center;
+}
+body footer section {
+  display: flex;
+  flex-basis: 200px;
+  justify-content: end;
+  gap: 30px;
+  position: relative;
+}
+body footer section article {
+  display: flex;
+  justify-content: center;
+  height: 35px;
+  width: 35px;
+  align-items: center;
+}
+body footer section article div {
+  border-radius: 50%;
+  border: 1px solid black;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 4px;
+  background-color: #f8f8f8;
+  z-index: 2;
+  padding: 20px;
+  position: absolute;
+}
+body footer section article div img {
+  width: 15px;
+  height: 15px;
+}
+body footer section article div + span {
+  position: absolute;
+  width: 45px;
+  height: 42px;
+  background-color: #03faee;
+  z-index: -1;
+  border-radius: 50%;
+}/*# sourceMappingURL=styles.css.map */
